@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disk Scheduling Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Input Section -->
+        <div class="container input-box">
+            <h1>Disk Scheduling Simulator</h1>
+            <div class="form-group">
+                <label for="head">🖥️ Initial Head Position:</label>
+                <input type="number" id="head" placeholder="Enter head position">
+            </div>
+
+            <div class="form-group">
+                <label for="requests">📋 Disk Request Sequence:</label>
+                <input type="text" id="requests" placeholder="Enter requests (e.g., 98 183 37)">
+            </div>
+
+            <div class="form-group">
+                <label for="algorithm">⚙️ Choose Algorithm:</label>
+                <select id="algorithm">
+                    <option value="fcfs">FCFS (First Come, First Serve)</option>
+                    <option value="sstf">SSTF (Shortest Seek Time First)</option>
+                    <option value="scan">SCAN (Elevator Algorithm)</option>
+                    <option value="cscan">C-SCAN (Circular SCAN)</option>
+                </select>
+            </div>
+
+            <button onclick="simulate()">🚀 Simulate</button>
+        </div>
+
+        <!-- Output Section -->
+        <div class="container output-box">
+            <h2>📊 Simulation Output</h2>
+            <div id="output">Results will appear here...</div>
+            <canvas id="seekChart"></canvas> <!-- Chart Display -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
